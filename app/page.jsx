@@ -1,9 +1,20 @@
 // import Image from "next/image";
+import Hero from "./Hero/page";
+import About from "./About/page";
+import Services from "./Services/page";
+import Career from "./Career/page";
+import Gallery from "./Gallery/page";
+import Contacts from "./Contacts/page";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Carp Travel App</h1>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Services />
+      <Career />
+      <Gallery />
+      <Contacts />
+    </>
   );
 }

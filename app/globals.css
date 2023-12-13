@@ -25,3 +25,45 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.hero {
+  background-image: url(../public//Hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 763px;
+}
+
+.about {
+  background-image: url(../public/About.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 826px;
+}
+
+.services {
+  background-image: url(../public/Services01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 779px;
+}
+
+.career {
+  background-image: url(../public/Career.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 818px;
+}
+
+.gallery {
+  background-image: url(../public/Gallery.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 788px;
+}
+
+.contacts {
+  background-image: url(../public/Contacts.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 762px;
+}

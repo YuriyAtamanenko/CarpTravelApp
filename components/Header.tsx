@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="pt-9 pb-12">
+    <header className="pt-9 pb-12 absolute w-full">
       <div className="mx-auto max-w-7xl outline">
         <nav className="flex justify-between">
           <div>

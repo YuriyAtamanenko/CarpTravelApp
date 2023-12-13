@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="about py-20" id="about">
+    <section className="about section py-20" id="about">
       <div className="container mx-auto max-w-7xl outline p-6">
         <h2>WHO WE ARE</h2>
         <p>

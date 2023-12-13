@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="hero pb-20 pt-24">
+    <section className="hero section pb-20 pt-24">
       <div className="container mx-auto max-w-7xl outline p-6">
         <h1>Uncover Carpathian’s Secrets</h1>
         <p>

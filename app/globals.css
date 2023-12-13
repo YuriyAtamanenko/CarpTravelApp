@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #fff;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -26,44 +26,58 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.hero {
-  background-image: url(../public//Hero.png);
+.section {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/Hero.png);
   height: 763px;
 }
 
 .about {
-  background-image: url(../public/About.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/About.png);
   height: 826px;
 }
 
 .services {
-  background-image: url(../public/Services01.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/Services01.png);
   height: 779px;
 }
 
 .career {
-  background-image: url(../public/Career.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/Career.png);
   height: 818px;
 }
 
 .gallery {
-  background-image: url(../public/Gallery.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/Gallery.png);
   height: 788px;
 }
 
 .contacts {
-  background-image: url(../public/Contacts.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/Contacts.png);
+
   height: 762px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 15, 8, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(2, 15, 8, 0.8);
+  border-radius: 4px;
 }

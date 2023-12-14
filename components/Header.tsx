@@ -13,7 +13,7 @@ export default function Header() {
               <p className="font-[karantina] text-sm leading-3">CarpTravel</p>
             </Link>
           </div>
-          <div className="flex gap-14">
+          <div className="flex gap-14 text-sm">
             <Link href="#about">About</Link>
             <Link href="#services">Services</Link>
             <Link href="#career">Career</Link>

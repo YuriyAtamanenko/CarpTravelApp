@@ -5,7 +5,7 @@ import logo from "../public/logo.png";
 export default function Header() {
   return (
     <header className="pt-9 pb-12 absolute w-full">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl px-6">
         <nav className="flex justify-between items-center">
           <div>
             <Link href="/">

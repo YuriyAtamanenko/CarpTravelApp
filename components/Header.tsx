@@ -2,10 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/logo.png";
 
-import { Karantina } from "next/font/google";
-
-const karantina = Karantina({ weight: "400" });
-
 export default function Header() {
   return (
     <header className="pt-9 pb-12 absolute w-full">

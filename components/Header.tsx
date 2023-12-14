@@ -13,12 +13,22 @@ export default function Header() {
               <p className="font-[karantina] text-sm leading-3">CarpTravel</p>
             </Link>
           </div>
-          <div className="flex gap-14 text-sm">
-            <Link href="#about">About</Link>
-            <Link href="#services">Services</Link>
-            <Link href="#career">Career</Link>
-            <Link href="#gallery">Gallery</Link>
-            <Link href="#contacts">Contacts</Link>
+          <div className="flex gap-14 ">
+            <Link href="#about" className="text-sm hover:scale-150">
+              About
+            </Link>
+            <Link href="#services" className="text-sm hover:scale-150">
+              Services
+            </Link>
+            <Link href="#career" className="text-sm hover:scale-150">
+              Career
+            </Link>
+            <Link href="#gallery" className="text-sm hover:scale-150">
+              Gallery
+            </Link>
+            <Link href="#contacts" className="text-sm hover:scale-150">
+              Contacts
+            </Link>
           </div>
         </nav>
       </div>

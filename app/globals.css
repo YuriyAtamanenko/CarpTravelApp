@@ -69,15 +69,15 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(2, 15, 8, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(2, 15, 8, 0.8);
+  background-color: rgb(2, 36, 17);
   border-radius: 4px;
 }

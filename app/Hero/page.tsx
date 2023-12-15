@@ -24,7 +24,9 @@ export default function Hero() {
           </p>
           <Link
             href="#contacts"
-            className="flex w-[18.375rem] h-[4.375rem] bg-white/5 justify-center items-center text-[32px] font-bold border-transparent file:border-solid border hover:border-white"
+            className="flex w-[18.375rem] h-[4.375rem] bg-white/5 justify-center 
+            items-center text-[32px] font-bold border-transparent file:border-solid border
+             hover:border-white"
           >
             JOIN NOW
           </Link>

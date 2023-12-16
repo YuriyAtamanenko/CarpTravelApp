@@ -43,9 +43,33 @@ body {
   height: 826px;
 }
 
-.services {
+.services01 {
   background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
-    url(../public/Services01.png);
+    url(../public/BgServices01.png);
+  height: 779px;
+}
+
+.services02 {
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/BgServices02.png);
+  height: 779px;
+}
+
+.services03 {
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/BgServices03.png);
+  height: 779px;
+}
+
+.services04 {
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/BgServices04.png);
+  height: 779px;
+}
+
+.services05 {
+  background-image: linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    url(../public/BgServices05.png);
   height: 779px;
 }
 

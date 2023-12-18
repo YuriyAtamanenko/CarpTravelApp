@@ -26,10 +26,13 @@ export default function Services02({ slideTo }: ISlideToProps) {
                   ATVs Traveling
                 </button>
               </li>
-              <li>
+              <li className="relative">
                 <button onClick={() => slideTo(1)} className="font-medium">
                   Rock climbing
                 </button>
+                <p className="absolute text-xs font-extralight tracking-[2.4px] top-0 left-[315px] w-[300px]">
+                  Destroy your limitations
+                </p>
               </li>
               <li>
                 <button

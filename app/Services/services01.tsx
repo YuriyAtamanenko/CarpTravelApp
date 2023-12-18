@@ -21,10 +21,13 @@ export default function Services01({ slideTo }: ISlideToProps) {
               01/<span className="text-white/20">05</span>
             </span>
             <ul className="flex flex-col gap-6 mt-5 text-[28px] font-extralight leading-6 w-56">
-              <li className="opacity-100">
+              <li className="relative">
                 <button onClick={() => slideTo(0)} className="font-medium">
                   ATVs Traveling
                 </button>
+                <p className="absolute text-xs font-extralight tracking-[2.4px] top-0 left-[315px] w-[300px]">
+                  Feel the adrenaline rush
+                </p>
               </li>
               <li>
                 <button onClick={() => slideTo(1)} className="opacity-50">

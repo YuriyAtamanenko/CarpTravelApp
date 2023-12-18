@@ -44,10 +44,13 @@ export default function Services05({ slideTo }: ISlideToProps) {
                   Skydiving
                 </button>
               </li>
-              <li>
+              <li className="relative">
                 <button onClick={() => slideTo(4)} className="font-medium">
                   Rafting
                 </button>
+                <p className="absolute text-xs font-extralight tracking-[2.4px] top-0 left-[315px] w-[300px]">
+                  Trust the flow
+                </p>
               </li>
             </ul>
           </div>

@@ -1,7 +1,11 @@
 import Image from "next/image";
 import ImgServices02 from "../../public/ImgServices02.jpg";
 
-export default function Services02() {
+interface ISlideToProps {
+  slideTo: (index: number) => void;
+}
+
+export default function Services02({ slideTo }: ISlideToProps) {
   return (
     <section className="services02 section py-20" id="services">
       <div className="flex container h-full mx-auto max-w-7xl p-6">
@@ -16,12 +20,35 @@ export default function Services02() {
             <span className="text-8xl font-thin leading-tight">
               02/<span className="text-white/20">05</span>
             </span>
-            <ul className="flex flex-col gap-6 mt-5 text-[28px] font-extralight leading-6 opacity-50 w-56">
-              <li>ATVs Traveling</li>
-              <li>Rock climbing</li>
-              <li>Hot air ballooning</li>
-              <li>Skydiving</li>
-              <li>Rafting</li>
+            <ul className="flex flex-col gap-6 mt-5 text-[28px] font-extralight leading-6 w-56">
+              <li>
+                <button onClick={() => slideTo(0)} className="opacity-50">
+                  ATVs Traveling
+                </button>
+              </li>
+              <li>
+                <button onClick={() => slideTo(1)} className="font-medium">
+                  Rock climbing
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => slideTo(2)}
+                  className="opacity-50 text-left"
+                >
+                  Hot air ballooning
+                </button>
+              </li>
+              <li>
+                <button onClick={() => slideTo(3)} className="opacity-50">
+                  Skydiving
+                </button>
+              </li>
+              <li>
+                <button onClick={() => slideTo(4)} className="opacity-50">
+                  Rafting
+                </button>
+              </li>
             </ul>
           </div>
           <p className="text-lg font-extralight leading-6 w-[294px] text-justify mt-auto ml-auto">

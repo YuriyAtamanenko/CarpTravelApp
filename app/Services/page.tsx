@@ -1,12 +1,11 @@
 "use client";
-import { Navigation } from "swiper/modules";
 
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade } from "swiper/modules";
-import { useSwiperSlide } from "swiper/react";
+
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
 import Services01 from "./services01";
@@ -16,36 +15,34 @@ import Services04 from "./services04";
 import Services05 from "./services05";
 
 export default function Services() {
-  const swiperSlide = useSwiperSlide();
-  // const GoTo = (index: number) => {
-  //   console.log("GO");
-  //   swiper.slideTo(index);
-  // };
+  const [swiperRef, setSwiperRef] = useState(null);
 
-  console.dir(swiperSlide);
+  const slideTo = (index: number) => {
+    swiperRef.slideTo(index);
+  };
 
   return (
     <Swiper
-      modules={[Navigation, EffectFade]}
+      modules={[EffectFade]}
+      onSwiper={setSwiperRef}
       spaceBetween={50}
       slidesPerView={1}
-      navigation
       effect="fade"
     >
       <SwiperSlide>
-        <Services01 />
+        <Services01 slideTo={slideTo} />
       </SwiperSlide>
       <SwiperSlide>
-        <Services02 />
+        <Services02 slideTo={slideTo} />
       </SwiperSlide>
       <SwiperSlide>
-        <Services03 />
+        <Services03 slideTo={slideTo} />
       </SwiperSlide>
       <SwiperSlide>
-        <Services04 />
+        <Services04 slideTo={slideTo} />
       </SwiperSlide>
       <SwiperSlide>
-        <Services05 />
+        <Services05 slideTo={slideTo} />
       </SwiperSlide>
     </Swiper>
   );

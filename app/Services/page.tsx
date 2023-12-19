@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { EffectFade } from "swiper/modules";
 
 // Import Swiper styles
@@ -15,7 +15,7 @@ import Services04 from "./services04";
 import Services05 from "./services05";
 
 export default function Services() {
-  const [swiperRef, setSwiperRef] = useState(null);
+  const [swiperRef, setSwiperRef] = useState<any>(null);
 
   const slideTo = (index: number) => {
     swiperRef.slideTo(index);

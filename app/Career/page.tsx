@@ -6,7 +6,7 @@ type FormData = {
   mail: string;
   position: string;
   tel: number;
-  policy: boolean;
+  confirm: boolean;
   message: string;
 };
 
@@ -76,33 +76,59 @@ export default function Career() {
           </p>
           <form autoComplete="off" onSubmit={onSubmit} className="flex mt-3">
             <div className="flex flex-col w-1/2">
-              <label htmlFor="name" className="flex flex-col">
+              <label
+                htmlFor="name"
+                className="flex flex-col text-xs font-extralight leading-6"
+              >
                 Full name
-                <input {...register("name")} className="bg-white/5" />
+                <input {...register("name")} className="bg-white/5 w-72 h-7" />
               </label>
-              <label htmlFor="mail" className="flex flex-col">
+              <label
+                htmlFor="mail"
+                className="flex flex-col text-xs font-extralight leading-6"
+              >
                 E-mail
-                <input {...register("mail")} className="bg-white/5" />
+                <input {...register("mail")} className="bg-white/5 w-72 h-7" />
               </label>
-              <label htmlFor="position" className="flex flex-col">
+              <label
+                htmlFor="position"
+                className="flex flex-col text-xs font-extralight leading-6"
+              >
                 Position
-                <input {...register("position")} className="bg-white/5" />
+                <input
+                  {...register("position")}
+                  className="bg-white/5 w-72 h-7"
+                />
               </label>
-              Phone
-              <label htmlFor="tel" className="flex flex-col">
-                <input {...register("tel")} className="bg-white/5" />
+
+              <label
+                htmlFor="tel"
+                className="flex flex-col text-xs font-extralight leading-6"
+              >
+                Phone
+                <input {...register("tel")} className="bg-white/5 w-72 h-7" />
               </label>
               <label>
-                <input type="checkbox" name="policy" className="bg-white/5" />
-                <span>
+                <input
+                  type="checkbox"
+                  {...register("confirm")}
+                  className="bg-white/5"
+                />
+                <span className="text-xs font-extralight leading-6">
                   I confirm my consent to the processing of personal data.
                 </span>
               </label>
             </div>
             <div className="flex flex-col w-1/2">
-              <label htmlFor="message" className="flex flex-col">
+              <label
+                htmlFor="message"
+                className="flex flex-col text-xs font-extralight leading-6"
+              >
                 Message
-                <textarea {...register("message")} className="bg-white/5" />
+                <textarea
+                  {...register("message")}
+                  className="bg-white/5 w-72 h-64"
+                />
               </label>
               <button type="submit">SEND</button>
             </div>

@@ -1,4 +1,24 @@
+"use client";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  name: string;
+  mail: string;
+  position: string;
+  tel: number;
+  policy: boolean;
+  message: string;
+};
+
 export default function Career() {
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
+  const onSubmit = handleSubmit((data) => console.log(data));
+
   return (
     <section className="career section py-20" id="career">
       <div className="flex container h-full mx-auto max-w-7xl p-6">
@@ -45,7 +65,7 @@ export default function Career() {
             </li>
           </ul>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 pl-3">
           <p className="mt-4 ml-auto text-lg font-extralight leading-6 w-72 text-justify">
             Your chance to join our passionate team in Carpathian tourism.
             Seeking talented professionals to share our common mission.
@@ -54,6 +74,39 @@ export default function Career() {
             Don&apos;t miss your opportunity! Fill out the form right now and
             join our team!
           </p>
+          <form autoComplete="off" onSubmit={onSubmit} className="flex mt-3">
+            <div className="flex flex-col w-1/2">
+              <label htmlFor="name" className="flex flex-col">
+                Full name
+                <input {...register("name")} className="bg-white/5" />
+              </label>
+              <label htmlFor="mail" className="flex flex-col">
+                E-mail
+                <input {...register("mail")} className="bg-white/5" />
+              </label>
+              <label htmlFor="position" className="flex flex-col">
+                Position
+                <input {...register("position")} className="bg-white/5" />
+              </label>
+              Phone
+              <label htmlFor="tel" className="flex flex-col">
+                <input {...register("tel")} className="bg-white/5" />
+              </label>
+              <label>
+                <input type="checkbox" name="policy" className="bg-white/5" />
+                <span>
+                  I confirm my consent to the processing of personal data.
+                </span>
+              </label>
+            </div>
+            <div className="flex flex-col w-1/2">
+              <label htmlFor="message" className="flex flex-col">
+                Message
+                <textarea {...register("message")} className="bg-white/5" />
+              </label>
+              <button type="submit">SEND</button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

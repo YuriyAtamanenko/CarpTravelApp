@@ -1,5 +1,3 @@
-"use client";
-import ScrollToTop from "react-scroll-to-top";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -21,16 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <ScrollToTop
-          smooth
-          style={{
-            right: "25px",
-            backgroundColor: "#0a2503",
-            boxShadow:
-              "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
-          }}
-          component={<p style={{ color: "green" }}>UP</p>}
-        />
+
         <main>{children}</main>
       </body>
     </html>

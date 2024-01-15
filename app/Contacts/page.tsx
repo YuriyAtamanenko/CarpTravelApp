@@ -27,10 +27,21 @@ export default function Contacts() {
             <div className="flex flex-col">
               <ul className="flex flex-col">
                 <li className="flex  justify-end">
-                  <p className="text-lg font-normal leading-6">
-                    +38 (098) 12 34 567 <br />
-                    +38 (073) 12 34 567
-                  </p>
+                  <div className="flex flex-col">
+                    <a
+                      href="tel:+380981234567"
+                      className="text-lg font-normal leading-6"
+                    >
+                      +38 (098) 12 34 567
+                    </a>
+                    <a
+                      href="tel:+380731234567"
+                      className="text-lg font-normal leading-6"
+                    >
+                      +38 (073) 12 34 567
+                    </a>
+                  </div>
+
                   <p className="text-xs font-extralight leading-6 w-72 ml-6">
                     Phone number
                   </p>

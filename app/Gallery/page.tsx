@@ -3,9 +3,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSwiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import Image from "next/image";
+
 import "swiper/css";
 import "swiper/css/navigation";
-import Image from "next/image";
+
 import Gallary01 from "../../public/Gallary/01.jpg";
 import Gallary02 from "../../public/Gallary/02.jpg";
 import Gallary03 from "../../public/Gallary/03.jpg";
@@ -18,37 +20,48 @@ export default function Gallery() {
         <h2 className="text-8xl font-thin uppercase leading-tight tracking-[-3.92px]">
           OUR <span className="font-medium">GALLERY</span>
         </h2>
-        <div className="mt-6">
+        <div className="flex items-center max-w-7xl">
+          <button
+            className="text-3xl font-thin mt-auto ml-auto"
+            onClick={() => swiper.slidePrev()}
+          >
+            BACK
+          </button>
           <Swiper
             modules={[Navigation]}
             rewind={true}
             slidesPerView={1}
-            className="flex w-[670px]"
+            className="flex flex-row w-[606px] m-0"
           >
             <SwiperSlide>
               <Image
                 src={Gallary01}
                 alt="Mountain landscape"
-                className="w-[670px]"
+                className="w-[606px]"
               />
             </SwiperSlide>
             <SwiperSlide>
               <Image
                 src={Gallary02}
                 alt="Mountain landscape"
-                className="w-[670px]"
+                className="w-[606px]"
               />
             </SwiperSlide>
             <SwiperSlide>
               <Image
                 src={Gallary03}
                 alt="Mountain landscape"
-                className="w-[670px]"
+                className="w-[606px]"
               />
             </SwiperSlide>
           </Swiper>
-          <button onClick={() => swiper.slidePrev()}>Back</button>
-          <button onClick={() => swiper.slideNext()}>Next</button>
+
+          <button
+            className="text-3xl font-thin mt-auto mr-auto"
+            onClick={() => swiper.slideNext()}
+          >
+            NEXT
+          </button>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
+import Image from "next/image";
 
 type FormData = {
   name: string;
@@ -13,11 +14,14 @@ type FormData = {
 export default function Career() {
   const {
     register,
-    setValue,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    reset();
+  });
 
   return (
     <section className="career section py-20" id="career">
@@ -78,18 +82,27 @@ export default function Career() {
             <div className="flex flex-col w-1/2">
               <label
                 htmlFor="name"
-                className="flex flex-col text-xs font-extralight leading-6  tracking-[2.4px]"
+                className="flex flex-col text-xs font-extralight leading-6  tracking-[2.4px]  relative"
               >
                 Full name
                 <input
-                  {...register("name", { required: true, maxLength: 30 })}
+                  {...register("name", {
+                    required: true,
+                    minLength: 2,
+                    maxLength: 30,
+                  })}
                   className="bg-white/5 w-72 h-7 mt-[4px] px-2 py-0.5 text-xl leading-6 "
                   placeholder="John Smith"
                 />
+                {errors.name && (
+                  <span className="absolute right-3 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                    Incorrect name
+                  </span>
+                )}
               </label>
               <label
                 htmlFor="mail"
-                className="mt-6 flex flex-col text-xs font-extralight leading-6 tracking-[2.4px]"
+                className="mt-6 flex flex-col text-xs font-extralight leading-6 tracking-[2.4px] relative"
               >
                 E-mail
                 <input
@@ -101,10 +114,15 @@ export default function Career() {
                   className="bg-white/5 w-72 h-7  mt-[4px] px-2 py-0.5 text-xl leading-6"
                   placeholder="johnsmith@email.com"
                 />
+                {errors.mail && (
+                  <span className="absolute right-3 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                    Invalid email
+                  </span>
+                )}
               </label>
               <label
                 htmlFor="position"
-                className="mt-6 flex flex-col text-xs font-extralight leading-6 tracking-[2.4px]"
+                className="mt-6 flex flex-col text-xs font-extralight leading-6 tracking-[2.4px]  relative"
               >
                 Position
                 <input
@@ -112,11 +130,15 @@ export default function Career() {
                   className="bg-white/5 w-72 h-7  mt-[4px] px-2 py-0.5 text-xl leading-6"
                   placeholder="Movie maker"
                 />
+                {errors.position && (
+                  <span className="absolute right-3 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                    Required field
+                  </span>
+                )}
               </label>
-
               <label
                 htmlFor="tel"
-                className="mt-6 flex flex-col text-xs font-extralight leading-6 relative  tracking-[2.4px]"
+                className="mt-6 flex flex-col text-xs font-extralight leading-6 relative tracking-[2.4px]"
               >
                 Phone
                 <input
@@ -128,7 +150,13 @@ export default function Career() {
                 <span className="text-xl leading-6 absolute top-[30px]">
                   +38
                 </span>
+                {errors.tel && (
+                  <span className="absolute right-3 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                    Incorrect phone
+                  </span>
+                )}
               </label>
+
               <label className="mt-9 w-72 flex items-start">
                 <input
                   type="checkbox"

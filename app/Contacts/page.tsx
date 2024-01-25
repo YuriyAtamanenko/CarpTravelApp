@@ -10,11 +10,14 @@ type FormData = {
 export default function Contacts() {
   const {
     register,
-    setValue,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    reset();
+  });
 
   return (
     <section className="contacts section py-20" id="contacts">
@@ -80,18 +83,27 @@ export default function Contacts() {
               <div className="flex justify-between ">
                 <label
                   htmlFor="name"
-                  className="flex flex-col text-xs font-extralight leading-6  tracking-[2.4px]"
+                  className="flex flex-col text-xs font-extralight leading-6  tracking-[2.4px] relative"
                 >
                   Full name
                   <input
-                    {...register("name", { required: true, maxLength: 30 })}
+                    {...register("name", {
+                      required: true,
+                      minLength: 2,
+                      maxLength: 30,
+                    })}
                     className="bg-white/5 w-72 h-7 mt-[4px] px-2 py-0.5 text-xl leading-6 "
                     placeholder="John Smith"
                   />
+                  {errors.name && (
+                    <span className="absolute right-0 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                      Incorrect name
+                    </span>
+                  )}
                 </label>
                 <label
                   htmlFor="mail"
-                  className="flex flex-col text-xs font-extralight leading-6 tracking-[2.4px]"
+                  className="flex flex-col text-xs font-extralight leading-6 tracking-[2.4px] relative"
                 >
                   E-mail
                   <input
@@ -103,6 +115,11 @@ export default function Contacts() {
                     className="bg-white/5 w-72 h-7  mt-[4px] px-2 py-0.5 text-xl leading-6"
                     placeholder="johnsmith@email.com"
                   />
+                  {errors.mail && (
+                    <span className="absolute right-0 bottom-[-20px] text-[#FF5757] text-xs font-extralight">
+                      Invalid email
+                    </span>
+                  )}
                 </label>
               </div>
 

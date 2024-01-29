@@ -1,6 +1,5 @@
 "use client";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
 
 type FormData = {
   name: string;
@@ -18,7 +17,10 @@ export default function Career() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
+
   const onSubmit = handleSubmit((data) => {
+    if (!data.confirm) return alert("Please, touch confirm");
+
     console.log(data);
     reset();
   });
@@ -163,7 +165,7 @@ export default function Career() {
                   {...register("confirm")}
                   className="mt-[4px] bg-white/5"
                 />
-                <span className="text-xs font-extralight leading-6">
+                <span className="text-xs font-extralight leading-6 ml-2">
                   I confirm my consent to the processing of personal data.
                 </span>
               </label>
